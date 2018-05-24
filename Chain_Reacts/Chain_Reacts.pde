@@ -7,13 +7,16 @@ void setup(){
   for (int i = 0; i < numBalls; i++) {
     int x = int(random(0,600));
     int y = int(random(0,600));
-    int h = int(random(0,100));
-    allb[i] = new Ball(x,y,h,h);
+    float r = random(0,50);
+    allb[i] = new Ball(x,y,r);
   }
 }
 
 void draw(){
+  background(51);
    for(Ball b : allb) {
      b.update();
+     b.checkBoundaryCollision();
+     b.display();
   }
 }
