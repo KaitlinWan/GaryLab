@@ -1,5 +1,5 @@
 int numBalls = int(random(25,35));
-Ball[] allb = new Ball[numBalls];
+ArrayList<Ball> balls = new ArrayList<Ball>();
 
 void setup(){
   background(51);
@@ -8,15 +8,21 @@ void setup(){
     int x = int(random(0,600));
     int y = int(random(0,600));
     float r = random(0,50);
-    allb[i] = new Ball(x,y,r);
+    balls.add(new Ball(x,y,r));
   }
 }
 
 void draw(){
   background(51);
-   for(Ball b : allb) {
-     b.update();
-     b.checkBoundaryCollision();
-     b.display();
+   for(int i = 0; i < balls.size(); i ++) {
+     balls.get(i).update();
+     balls.get(i).hitWalls();
+     if (balls.get(i).state == 3)
+       balls.remove(i);
+     //b.checkCollision();
   }
+}
+
+void mouseClicked() {
+  balls.add(new Ball(mouseX, mouseY));
 }
