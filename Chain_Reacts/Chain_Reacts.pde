@@ -1,13 +1,13 @@
-int numBalls = int(random(25,35));
+int numBalls = int(random(60,90));
 ArrayList<Ball> balls = new ArrayList<Ball>();
 
 void setup(){
   background(51);
-  size(600,600);
+  size(900,850);
   for (int i = 0; i < numBalls; i++) {
-    int x = int(random(0,600));
-    int y = int(random(0,600));
-    float r = random(0,50);
+    int x = int(random(0,900));
+    int y = int(random(0,850));
+    float r = random(10,50);
     balls.add(new Ball(x,y,r));
   }
 }
