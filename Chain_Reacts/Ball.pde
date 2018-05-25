@@ -18,7 +18,7 @@ class Ball{
     x = xcor;
     y = ycor;
     rad = r;
-    c = color(random(255), random(255), random(255));
+    c = color(random(0), random(50,255), random(100,255));
     yVel = random(-5, 5);
     xVel = random(-5, 5);
   }
